@@ -1,0 +1,15 @@
+export const methods = [
+	'MuslimWorldLeague',
+	'Egyptian',
+	'Karachi',
+	'UmmAlQura',
+	'Dubai',
+	'MoonsightingCommittee',
+	'NorthAmerica',
+	'Kuwait',
+	'Qatar',
+	'Singapore',
+	'Tehran',
+	'Turkey',
+	'Other',
+]
