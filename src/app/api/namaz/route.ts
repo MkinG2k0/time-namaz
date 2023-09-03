@@ -4,6 +4,8 @@ import { getGeo } from 'shared/lib/get-geo'
 import { NextResponse } from 'next/server'
 import adhan from 'namaz/Adhan'
 
+export const revalidate = 24 * 60 * 60
+
 export const GET = async (request: Request) => {
 	const { searchParams } = new URL(request.url)
 	const dateStr = searchParams.get('date')
@@ -16,7 +18,7 @@ export const GET = async (request: Request) => {
 	const city = searchParams.get('city')
 
 	if (city) {
-		const [cityLat, cityLng] = await getGeo(city)
+		const [cityLat, cityLng] = await getGeo(city, revalidate)
 
 		lat = cityLat
 		lng = cityLng

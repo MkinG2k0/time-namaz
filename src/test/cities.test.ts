@@ -1,5 +1,3 @@
-import NodeGeocoder from 'node-geocoder'
-import cities from 'cities'
 import { it } from 'vitest'
 
 it('city', async () => {
@@ -24,4 +22,6 @@ it('city', async () => {
 	// 		},
 	// 	)
 	// })
+
+	console.log(new Date(2023, 8, 3).toISOString())
 })

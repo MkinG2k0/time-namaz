@@ -1,6 +1,8 @@
-export const getGeo = async (city: string) => {
+export const getGeo = async (city: string, revalidate: number) => {
 	const regex = /window\.APP_INITIALIZATION_STATE=\[[^\]]+\]/
-	const data = await fetch(`https://www.google.ru/maps/place/${city}/`).then((value) => value.text())
+	const data = await fetch(`https://www.google.ru/maps/place/${city}/`, {
+		next: { revalidate },
+	}).then((value) => value.text())
 	const match = data.match(regex)
 	if (match) {
 		const [any, lng, lat] = JSON.parse(match[0].replace('window.APP_INITIALIZATION_STATE=[[', '')) as [
