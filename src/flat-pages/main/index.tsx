@@ -5,7 +5,7 @@ export const MainPage = ({}) => {
 	return (
 		<div className={'col pt-32 gap-24'}>
 			<About />
-			<Info />
+			{/*<Info />*/}
 		</div>
 	)
 }
